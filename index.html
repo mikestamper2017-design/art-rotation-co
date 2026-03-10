@@ -3,358 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Rotation Co. | Curated by Mike Andrew Stamper</title>
+    <title>Art Rotation Co. | Mike Andrew Stamper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        /* --- HIGH-END MINIMALIST CSS --- */
         :root {
-            --bg-white: #FFFFFF;
-            --text-dark: #1A1A1A; /* Not pure black, feels softer/more expensive */
-            --accent-gray: #E0E0E0; /* Subtle line accents */
-            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean, default high-end choice */
-            --font-serif: 'Playfair Display', serif; /* For headers, adds sophistication */
+            --bg: #FFFFFF;
+            --text: #1a1a1a;
+            --accent: #f4f4f4;
+            --gold: #c5a059; /* Subtle gold for equity highlights */
         }
 
-        /* Essential high-end typography reset */
         body {
             margin: 0;
-            padding: 0;
-            background-color: var(--bg-white);
-            color: var(--text-dark);
-            font-family: var(--font-main);
-            font-weight: 300; /* Light text weight is very current/luxury */
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* --- LAYOUT UTILITIES --- */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        /* --- THE LOGO / HEADER --- */
-        header {
-            padding: 30px 0;
-            border-bottom: 1px solid var(--accent-gray);
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 20px;
             text-align: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.95);
+            z-index: 100;
         }
 
-        header h1 {
-            font-family: var(--font-serif);
-            font-weight: 400;
-            font-size: 2rem;
+        nav h1 {
+            font-family: 'Playfair Display', serif;
             text-transform: uppercase;
-            letter-spacing: 0.15em; /* Large tracking is classic luxury */
+            letter-spacing: 4px;
+            font-size: 1.2rem;
             margin: 0;
         }
 
-        header p {
-            margin: 5px 0 0;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            color: #777;
-        }
-
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
-            padding: 100px 0;
+            padding: 60px 20px;
             text-align: center;
-            background: #FAFAFA; /* Very subtly different from body, adds depth */
+            background: #fafafa;
         }
 
-        .hero-title {
-            font-family: var(--font-serif);
-            font-size: 3rem;
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: #555;
-            max-width: 600px;
-            margin: 0 auto 50px;
-        }
-
-        /* The 'White Glove' Button */
-        .btn-whiteglove {
-            display: inline-block;
-            padding: 15px 35px;
-            border: 1px solid var(--text-dark);
-            background: none;
-            color: var(--text-dark);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.15em;
-            transition: 0.3s;
-        }
-
-        .btn-whiteglove:hover {
-            background-color: var(--text-dark);
-            color: var(--bg-white);
-        }
-
-        /* --- HOW IT WORKS SECTION --- */
-        .how-it-works {
-            padding: 80px 0;
-            text-align: center;
-            border-bottom: 1px solid var(--accent-gray);
-        }
-
-        .how-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            max-width: 900px;
-            margin: 50px auto 0;
-        }
-
-        .how-step h3 {
-            font-family: var(--font-serif);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
 
-        .how-step p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        /* --- THE ART GALLERY (The expensive mockups go here!) --- */
-        .gallery {
-            padding: 100px 0;
+        /* --- GALLERY GRID --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two large images per row feel more intentional than 3 */
-            gap: 60px; /* Large space between pieces gives them breathing room */
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            margin-top: 40px;
         }
 
         .art-card {
-            border: 1px solid var(--accent-gray);
-            padding: 20px;
             background: #fff;
-            transition: transform 0.2s ease;
+            transition: 0.3s;
         }
 
-        .art-card:hover {
-            transform: translateY(-5px); /* Very slight lift on hover */
-        }
-
-        /* THE KEY MOCKUP IMAGE */
-        .art-image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .img-container {
+            background: #f9f9f9;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.02);
             margin-bottom: 20px;
         }
 
-        .art-details {
-            text-align: center;
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
         }
 
-        .art-title {
-            font-family: var(--font-serif);
-            font-size: 1.25rem;
-            font-weight: 400;
-            margin: 0 0 10px;
+        .details { text-align: center; }
+
+        .details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
         }
 
-        .art-meta {
-            font-size: 0.8rem;
+        .meta {
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
             color: #888;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        /* --- THE ROTATION CALCULATOR (Built in!) --- */
-        .calc-panel {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid var(--accent-gray);
+        /* --- PRICING PANEL --- */
+        .price-box {
+            background: var(--accent);
+            padding: 20px;
+            border-radius: 4px;
             text-align: left;
+            margin-bottom: 20px;
         }
 
-        .calc-row {
+        .price-row {
             display: flex;
             justify-content: space-between;
             font-size: 0.85rem;
-            margin-bottom: 8px;
+            margin: 8px 0;
         }
 
-        .calc-value {
-            font-weight: 400;
+        .equity-row {
+            color: var(--gold);
+            font-weight: 600;
+            border-top: 1px solid #ddd;
+            padding-top: 8px;
+            margin-top: 8px;
         }
 
-        .calc-action {
-            margin-top: 20px;
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        /* ARC Secondary Button */
-        .btn-arc {
+        /* --- BUTTONS --- */
+        .btn {
             display: block;
             width: 100%;
-            text-align: center;
-            padding: 12px;
-            background-color: var(--text-dark);
-            color: var(--bg-white);
-            border: 1px solid var(--text-dark);
-            text-decoration: none;
+            padding: 15px;
             text-transform: uppercase;
+            letter-spacing: 2px;
             font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            cursor: pointer;
+            text-decoration: none;
+            border-radius: 2px;
+            margin-bottom: 10px;
+            transition: 0.3s;
         }
 
-        /* View on Saatchi Button (Alt) */
-        .btn-saatchi {
-            display: block;
-            width: 100%;
-            text-align: center;
-            padding: 12px;
-            background-color: #fff;
-            color: var(--text-dark);
-            border: 1px solid var(--accent-gray);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
+        .btn-black {
+            background: #000;
+            color: #fff;
+            border: 1px solid #000;
         }
 
-        /* --- FOOTER --- */
-        footer {
-            padding: 60px 0;
-            text-align: center;
-            background: #FAFAFA;
-            font-size: 0.8rem;
-            color: #888;
-            border-top: 1px solid var(--accent-gray);
+        .btn-outline {
+            background: transparent;
+            color: #000;
+            border: 1px solid #ddd;
+        }
+
+        /* --- TERMS MODAL --- */
+        #terms-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 40px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px; right: 20px;
+            cursor: pointer; font-size: 1.5rem;
+        }
+
+        /* --- MOBILE TWEAKS --- */
+        @media (max-width: 600px) {
+            .hero h2 { font-size: 1.8rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .img-container { padding: 20px; }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <h1>Art Rotation Co.</h1>
-        <p>Curated by Mike Andrew Stamper | Ontario, Canada</p>
-    </div>
-</header>
+<nav>
+    <h1>Art Rotation Co.</h1>
+</nav>
 
 <section class="hero">
     <div class="container">
-        <h2 class="hero-title">Live with Masterpieces.<br> Rotate on Demand.</h2>
-        <p class="hero-subtitle">The 'White Glove' contemporary art exchange. Own your collection, or evolve it through our exclusive rotation service.</p>
-        <a href="#gallery" class="btn-whiteglove">Explore the Collection</a>
+        <h2>Curated Rotation</h2>
+        <p>Live with original Canadian art. Rotate monthly. Earn equity.</p>
+        <button class="btn btn-outline" style="width: auto; display: inline-block;" onclick="openTerms()">How Equity Works</button>
     </div>
 </section>
 
-<section class="how-it-works">
-    <div class="container">
-        <h2 class="hero-title" style="font-size: 2.2rem;">Our Model</h2>
-        <div class="how-grid">
-            <div class="how-step">
-                <h3>1. Select</h3>
-                <p>Pick your first piece from the gallery. Every work is an original by Mike Andrew Stamper.</p>
+<div class="container">
+    <div class="gallery-grid">
+
+        <div class="art-card">
+            <div class="img-container">
+                <img src="images/stamper-acrylicfalls1.jpg" alt="Acrylic Falls">
             </div>
-            <div class="how-step">
-                <h3>2. Rotate</h3>
-                <p>Enjoy the piece for 4% of its value monthly. Change it up whenever you're ready.</p>
+            <div class="details">
+                <h3>Acrylic Falls</h3>
+                <p class="meta">Acrylic on Canvas | 2026</p>
+                <div class="price-box">
+                    <div class="price-row"><span>Value</span><span>$1,200.00</span></div>
+                    <div class="price-row"><span>Monthly Rotation</span><span>$48.00</span></div>
+                    <div class="price-row equity-row"><span>Monthly Equity (75%)</span><span>$36.00</span></div>
+                </div>
+                <a href="YOUR_SQUARE_LINK_FOR_FALLS" class="btn btn-black">Start Rotation</a>
+                <a href="https://www.saatchiart.com/mikestamper" class="btn btn-outline">Purchase Outright</a>
             </div>
-            <div class="how-step">
-                <h3>3. Own</h3>
-                <p>75% of your fees convert to equity. Complete ownership at your own pace.</p>
-            </div>
-        }
-        <div style="margin-top: 40px; font-size: 0.85rem; color: #666;">
-            A bespoke **$75–$125 "White Glove" fee** covers insurend transport, installation, and swap logistics.
         </div>
-    </div>
-</section>
 
-<section class="gallery" id="gallery">
-    <div class="container">
-        <div class="gallery-grid">
-
-            <div class="art-card">
-                <div class="art-image-container">
-                    <img src="https://via.placeholder.com/800x600.png?text=HIGH-END+MOCKUP+OF+WATERCOLOR" alt="Mike Stamper - Abstract Watercolor">
-                </div>
-                <div class="art-details">
-                    <h4 class="art-title">Flow State No. 4</h4>
-                    <p class="art-meta">Watercolor on Paper | 24" x 36"</p>
-                    
-                    <div class="calc-panel">
-                        <div class="calc-row">
-                            <span>Fair Market Value (FMV)</span>
-                            <span class="calc-value">$1,800 CAD</span>
-                        </div>
-                        <div class="calc-row">
-                            <span>Monthly Rotation Fee (4%)</span>
-                            <span class="calc-value">$72.00</span>
-                        </div>
-                        <div class="calc-row" style="color: #333;">
-                            <span>Monthly Equity Earned (75%)</span>
-                            <span class="calc-value">$54.00</span>
-                        </div>
-                        
-                        <div class="calc-action">
-                            <a href="#" class="btn-arc">Request Rotation</a>
-                            <a href="#" class="btn-saatchi">Acquire on Saatchi Art</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="art-card">
+            <div class="img-container">
+                <img src="images/stamper-sculpturebear2a.jpg" alt="Bear Study">
             </div>
-
-            <div class="art-card">
-                <div class="art-image-container">
-                    <img src="https://via.placeholder.com/800x600.png?text=HIGH-END+MOCKUP+OF+WOOD+SCULPTURE" alt="Mike Stamper - Wood Sculpture">
+            <div class="details">
+                <h3>Bear Study No. 2</h3>
+                <p class="meta">Sculpted Wood | Abstract</p>
+                <div class="price-box">
+                    <div class="price-row"><span>Value</span><span>$950.00</span></div>
+                    <div class="price-row"><span>Monthly Rotation</span><span>$38.00</span></div>
+                    <div class="price-row equity-row"><span>Monthly Equity (75%)</span><span>$28.50</span></div>
                 </div>
-                <div class="art-details">
-                    <h4 class="art-title">Fragment of Time No. 12</h4>
-                    <p class="art-meta">Sculpted Wood | 18"H x 14"W x 6"D</p>
-                    
-                    <div class="calc-panel">
-                        <div class="calc-row">
-                            <span>Fair Market Value (FMV)</span>
-                            <span class="calc-value">$2,500 CAD</span>
-                        </div>
-                        <div class="calc-row">
-                            <span>Monthly Rotation Fee (4%)</span>
-                            <span class="calc-value">$100.00</span>
-                        </div>
-                        <div class="calc-row" style="color: #333;">
-                            <span>Monthly Equity Earned (75%)</span>
-                            <span class="calc-value">$75.00</span>
-                        </div>
-                        
-                        <div class="calc-action">
-                            <a href="#" class="btn-arc">Request Rotation</a>
-                            <a href="#" class="btn-saatchi">Acquire on Saatchi Art</a>
-                        </div>
-                    </div>
+                <a href="YOUR_SQUARE_LINK_FOR_BEAR" class="btn btn-black">Start Rotation</a>
+                <a href="https://www.saatchiart.com/mikestamper" class="btn btn-outline">Purchase Outright</a>
+            </div>
+        </div>
+
+        <div class="art-card">
+            <div class="img-container">
+                <img src="images/stamper-acrylicsunrisecanoe1.jpg" alt="Sunrise Canoe">
+            </div>
+            <div class="details">
+                <h3>Sunrise Canoe</h3>
+                <p class="meta">Acrylic on Canvas</p>
+                <div class="price-box">
+                    <div class="price-row"><span>Value</span><span>$1,500.00</span></div>
+                    <div class="price-row"><span>Monthly Rotation</span><span>$60.00</span></div>
+                    <div class="price-row equity-row"><span>Monthly Equity (75%)</span><span>$45.00</span></div>
                 </div>
+                <a href="YOUR_SQUARE_LINK_FOR_CANOE" class="btn btn-black">Start Rotation</a>
+                <a href="https://www.saatchiart.com/mikestamper" class="btn btn-outline">Purchase Outright</a>
             </div>
+        </div>
 
-            </div>
     </div>
-</section>
+</div>
 
-<footer>
-    <div class="container">
-        <p>&copy; 2026 Mike Andrew Stamper. All original artwork is intellectual property.</p>
-        <p>A Canadian art exchange. Rotation services available in selected regions.</p>
+<div id="terms-modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeTerms()">&times;</span>
+        <h2 style="font-family: 'Playfair Display', serif;">White-Glove Terms</h2>
+        <hr>
+        <p><strong>1. The Rotation Model</strong><br>
+        Art Rotation Co. (ARC) provides a monthly subscription service. You pay 4% of the artwork's value to enjoy the piece in your home or office.</p>
+        
+        <p><strong>2. Equity Accumulation</strong><br>
+        75% of your monthly fee is applied as a credit toward the eventual purchase of the piece. If you choose to keep the work permanently, your total payments act as a down payment.</p>
+
+        <p><strong>3. White-Glove Swaps</strong><br>
+        When you are ready for a new piece, a flat **$75 - $125 Rotation Fee** covers the professional logistics: insured pickup of the current work and delivery/installation of the new selection.</p>
+
+        <p><strong>4. Care of Work</strong><br>
+        Collectors are responsible for maintaining the work in its original condition while on rotation. All pieces are insured during transport.</p>
     </div>
-</footer>
+</div>
+
+<script>
+    function openTerms() { document.getElementById('terms-modal').style.display = 'block'; }
+    function closeTerms() { document.getElementById('terms-modal').style.display = 'none'; }
+    // Close if clicking outside the white box
+    window.onclick = function(event) {
+        let modal = document.getElementById('terms-modal');
+        if (event.target == modal) { modal.style.display = 'none'; }
+    }
+</script>
 
 </body>
 </html>
