@@ -10,7 +10,7 @@
             --bg: #FFFFFF;
             --text: #1a1a1a;
             --accent: #f4f4f4;
-            --gold: #c5a059; /* Subtle gold for equity highlights */
+            --gold: #c5a059;
         }
 
         body {
@@ -22,7 +22,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- NAVIGATION --- */
         nav {
             padding: 20px;
             text-align: center;
@@ -41,7 +40,6 @@
             margin: 0;
         }
 
-        /* --- HERO --- */
         .hero {
             padding: 60px 20px;
             text-align: center;
@@ -54,7 +52,6 @@
             margin-bottom: 10px;
         }
 
-        /* --- GALLERY GRID --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -104,7 +101,6 @@
             margin-bottom: 20px;
         }
 
-        /* --- PRICING PANEL --- */
         .price-box {
             background: var(--accent);
             padding: 20px;
@@ -128,7 +124,6 @@
             margin-top: 8px;
         }
 
-        /* --- BUTTONS --- */
         .btn {
             display: block;
             width: 100%;
@@ -139,6 +134,7 @@
             text-decoration: none;
             border-radius: 2px;
             margin-bottom: 10px;
+            box-sizing: border-box;
             transition: 0.3s;
         }
 
@@ -154,7 +150,6 @@
             border: 1px solid #ddd;
         }
 
-        /* --- TERMS MODAL --- */
         #terms-modal {
             display: none;
             position: fixed;
@@ -181,11 +176,9 @@
             cursor: pointer; font-size: 1.5rem;
         }
 
-        /* --- MOBILE TWEAKS --- */
         @media (max-width: 600px) {
             .hero h2 { font-size: 1.8rem; }
             .gallery-grid { grid-template-columns: 1fr; }
-            .img-container { padding: 20px; }
         }
     </style>
 </head>
@@ -197,9 +190,9 @@
 
 <section class="hero">
     <div class="container">
-        <h2>Curated Rotation</h2>
-        <p>Live with original Canadian art. Rotate monthly. Earn equity.</p>
-        <button class="btn btn-outline" style="width: auto; display: inline-block;" onclick="openTerms()">How Equity Works</button>
+        <h2>Private Collection</h2>
+        <p>Live with original Canadian works. Rotate quarterly. Build equity.</p>
+        <button class="btn btn-outline" style="width: auto; display: inline-block;" onclick="openTerms()">The Logistics</button>
     </div>
 </section>
 
@@ -218,8 +211,8 @@
                     <div class="price-row"><span>Monthly Rotation</span><span>$48.00</span></div>
                     <div class="price-row equity-row"><span>Monthly Equity (75%)</span><span>$36.00</span></div>
                 </div>
-                <a href="YOUR_SQUARE_LINK_FOR_FALLS" class="btn btn-black">Start Rotation</a>
-                <a href="https://www.saatchiart.com/mikestamper" class="btn btn-outline">Purchase Outright</a>
+                <a href="membership.html" class="btn btn-black">Start Rotation Membership</a>
+                <a href="mailto:mike_stamper@hotmail.com?subject=Private%20Purchase%20Inquiry:%20Acrylic%20Falls" class="btn btn-outline">Private Purchase Inquiry</a>
             </div>
         </div>
 
@@ -229,14 +222,14 @@
             </div>
             <div class="details">
                 <h3>Bear Study No. 2</h3>
-                <p class="meta">Sculpted Wood | Abstract</p>
+                <p class="meta">Sculpted Wood | Abstract Form</p>
                 <div class="price-box">
                     <div class="price-row"><span>Value</span><span>$950.00</span></div>
                     <div class="price-row"><span>Monthly Rotation</span><span>$38.00</span></div>
                     <div class="price-row equity-row"><span>Monthly Equity (75%)</span><span>$28.50</span></div>
                 </div>
-                <a href="YOUR_SQUARE_LINK_FOR_BEAR" class="btn btn-black">Start Rotation</a>
-                <a href="https://www.saatchiart.com/mikestamper" class="btn btn-outline">Purchase Outright</a>
+                <a href="membership.html" class="btn btn-black">Start Rotation Membership</a>
+                <a href="mailto:mike_stamper@hotmail.com?subject=Private%20Purchase%20Inquiry:%20Bear%20Study%20No.2" class="btn btn-outline">Private Purchase Inquiry</a>
             </div>
         </div>
 
@@ -252,8 +245,8 @@
                     <div class="price-row"><span>Monthly Rotation</span><span>$60.00</span></div>
                     <div class="price-row equity-row"><span>Monthly Equity (75%)</span><span>$45.00</span></div>
                 </div>
-                <a href="YOUR_SQUARE_LINK_FOR_CANOE" class="btn btn-black">Start Rotation</a>
-                <a href="https://www.saatchiart.com/mikestamper" class="btn btn-outline">Purchase Outright</a>
+                <a href="membership.html" class="btn btn-black">Start Rotation Membership</a>
+                <a href="mailto:mike_stamper@hotmail.com?subject=Private%20Purchase%20Inquiry:%20Sunrise%20Canoe" class="btn btn-outline">Private Purchase Inquiry</a>
             </div>
         </div>
 
@@ -263,26 +256,22 @@
 <div id="terms-modal">
     <div class="modal-content">
         <span class="close-modal" onclick="closeTerms()">&times;</span>
-        <h2 style="font-family: 'Playfair Display', serif;">White-Glove Terms</h2>
+        <h2 style="font-family: 'Playfair Display', serif;">Member Logistics</h2>
         <hr>
-        <p><strong>1. The Rotation Model</strong><br>
-        Art Rotation Co. (ARC) provides a monthly subscription service. You pay 4% of the artwork's value to enjoy the piece in your home or office.</p>
+        <p><strong>1. Rotation Fees</strong><br>
+        A monthly fee of 4% of the FMV allows you to rotate works within your space as your tastes evolve.</p>
         
         <p><strong>2. Equity Accumulation</strong><br>
-        75% of your monthly fee is applied as a credit toward the eventual purchase of the piece. If you choose to keep the work permanently, your total payments act as a down payment.</p>
+        75% of fees are credited toward ownership. We provide quarterly statements tracking your Art Equity balance.</p>
 
-        <p><strong>3. White-Glove Swaps</strong><br>
-        When you are ready for a new piece, a flat **$75 - $125 Rotation Fee** covers the professional logistics: insured pickup of the current work and delivery/installation of the new selection.</p>
-
-        <p><strong>4. Care of Work</strong><br>
-        Collectors are responsible for maintaining the work in its original condition while on rotation. All pieces are insured during transport.</p>
+        <p><strong>3. Private Acquisition</strong><br>
+        Any piece on rotation can be acquired outright at any time. Your accumulated equity is applied as a direct discount.</p>
     </div>
 </div>
 
 <script>
     function openTerms() { document.getElementById('terms-modal').style.display = 'block'; }
     function closeTerms() { document.getElementById('terms-modal').style.display = 'none'; }
-    // Close if clicking outside the white box
     window.onclick = function(event) {
         let modal = document.getElementById('terms-modal');
         if (event.target == modal) { modal.style.display = 'none'; }
