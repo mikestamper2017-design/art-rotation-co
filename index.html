@@ -17,68 +17,78 @@
             opacity: 0.1; pointer-events: none; z-index: 9999;
         }
 
-        /* MINIMAL NAV */
+        /* MOBILE-OPTIMIZED NAV (FIXED COLLISION) */
         nav {
-            position: fixed; top: 0; width: 100%; padding: 30px 40px;
-            z-index: 1000; display: flex; justify-content: space-between; align-items: center;
+            position: fixed; top: 0; width: 100%; padding: 20px 30px;
+            z-index: 1000; display: flex; flex-direction: row; justify-content: space-between; align-items: center;
             box-sizing: border-box; transition: 0.4s; color: #fff;
         }
-        nav.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 15px 40px; border-bottom: 1px solid #eee; color: #1a1a1a; }
-        nav h1 { font-family: 'Playfair Display', serif; font-size: 0.8rem; letter-spacing: 4px; margin: 0; text-transform: uppercase; font-weight: 400; }
-        .nav-links a { text-decoration: none; color: inherit; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; margin-left: 20px; opacity: 0.7; }
+        nav.scrolled { background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); padding: 10px 30px; border-bottom: 1px solid #eee; color: #1a1a1a; }
+        
+        .nav-logo h1 { font-family: 'Playfair Display', serif; font-size: 0.7rem; letter-spacing: 3px; margin: 0; text-transform: uppercase; font-weight: 400; line-height: 1.4; }
+        .nav-links { display: flex; gap: 15px; }
+        .nav-links a { text-decoration: none; color: inherit; font-size: 0.55rem; letter-spacing: 1px; text-transform: uppercase; opacity: 0.7; }
 
         /* PAGE STRUCTURE */
         section.page { height: 100vh; display: flex; scroll-snap-align: start; position: relative; }
         
         /* HERO PAGE */
-        .hero-page { background: var(--charcoal); color: #fff; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hero-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 400; font-style: italic; margin: 0; }
-        .hero-sub { text-transform: uppercase; letter-spacing: 10px; font-size: 0.6rem; color: var(--gold); margin-bottom: 20px; }
+        .hero-page { background: var(--charcoal); color: #fff; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-top: 60px; }
+        .hero-content { margin-top: 40px; padding: 0 20px; }
+        .hero-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 10vw, 5rem); font-weight: 400; font-style: italic; margin: 0; line-height: 1.1; }
+        .hero-sub { text-transform: uppercase; letter-spacing: 6px; font-size: 0.55rem; color: var(--gold); margin-bottom: 15px; }
 
         /* ART CONTENT */
-        .art-visual { flex: 1.2; background: #fcfcfc; display: flex; align-items: center; justify-content: center; padding: 60px; }
-        .art-visual img { max-width: 80%; max-height: 70vh; box-shadow: 20px 30px 60px rgba(0,0,0,0.1); border: 1px solid #f0f0f0; }
+        .art-visual { flex: 1.2; background: #fcfcfc; display: flex; align-items: center; justify-content: center; padding: 40px; }
+        .art-visual img { max-width: 90%; max-height: 65vh; box-shadow: 15px 25px 50px rgba(0,0,0,0.1); border: 1px solid #f0f0f0; }
         
-        .art-story { flex: 0.8; padding: 60px; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid #f0f0f0; background: #fff; }
-        .story-header h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 0; font-weight: 400; line-height: 1.1; }
-        .story-meta { text-transform: uppercase; letter-spacing: 4px; font-size: 0.6rem; color: var(--gold); margin: 15px 0 35px; }
+        .art-story { flex: 0.8; padding: 40px; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid #f0f0f0; background: #fff; }
+        .story-header h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 0; font-weight: 400; line-height: 1.1; }
+        .story-meta { text-transform: uppercase; letter-spacing: 3px; font-size: 0.55rem; color: var(--gold); margin: 10px 0 25px; }
 
         /* PRICE BOX */
-        .price-anchor { border: 1px solid #eee; padding: 25px; margin-bottom: 35px; }
-        .price-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.85rem; }
-        .label { text-transform: uppercase; font-size: 0.6rem; color: #999; letter-spacing: 1px; }
-        .equity { color: var(--gold); border-top: 1px solid #f0f0f0; padding-top: 8px; margin-top: 8px; font-weight: 400; }
+        .price-anchor { border: 1px solid #eee; padding: 20px; margin-bottom: 25px; }
+        .price-row { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.8rem; }
+        .label { text-transform: uppercase; font-size: 0.55rem; color: #999; letter-spacing: 1px; }
+        .equity { color: var(--gold); border-top: 1px solid #f0f0f0; padding-top: 8px; margin-top: 8px; }
 
-        .artist-notes { font-family: 'Playfair Display', serif; font-style: italic; color: #555; margin-bottom: 35px; line-height: 1.7; font-size: 1.05rem; }
+        .artist-notes { font-family: 'Playfair Display', serif; font-style: italic; color: #555; margin-bottom: 25px; line-height: 1.6; font-size: 0.95rem; }
 
         /* BUTTONS */
-        .btn { padding: 18px; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.65rem; border: 1px solid #000; text-align: center; transition: 0.3s; cursor: pointer; }
+        .btn { padding: 15px; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.6rem; border: 1px solid #000; text-align: center; transition: 0.3s; cursor: pointer; }
         .btn-black { background: #000; color: #fff; }
-        .btn-unlock { background: transparent; border-color: var(--gold); color: var(--gold); margin-top: 40px; padding: 15px 40px; }
-        .btn-unlock:hover { background: var(--gold); color: #fff; }
+        .btn-unlock { background: transparent; border-color: var(--gold); color: var(--gold); margin-top: 30px; padding: 12px 30px; }
 
         /* ABOUT PAGE */
-        .about-page { background: #fafafa; padding: 80px; align-items: center; justify-content: center; }
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1100px; }
-        .about-text h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 400; margin-top: 10px; }
-        .future-box { margin-top: 40px; padding-top: 30px; border-top: 1px solid #eee; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.75rem; color: #888; }
+        .about-page { background: #fafafa; padding: 60px 30px; align-items: center; justify-content: center; overflow-y: auto; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; }
+        .about-text h3 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400; margin: 10px 0; }
+        
+        /* WISH LIST / GUEST SECTION */
+        .future-box { margin-top: 30px; padding-top: 25px; border-top: 1px solid #eee; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.7rem; color: #888; }
+        .future-item h4 { color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 5px; font-size: 0.65rem; }
+        .future-item a { color: inherit; text-decoration: underline; }
 
         @media (max-width: 900px) {
             section.page { flex-direction: column; height: auto; scroll-snap-align: none; }
-            .art-visual { height: 60vh; padding: 30px; }
-            .art-story { padding: 50px 30px; border-left: none; }
-            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .art-visual { height: auto; padding: 60px 20px; }
+            .art-story { padding: 40px 20px; border-left: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            nav { padding: 15px 20px; }
+            .nav-logo h1 { font-size: 0.6rem; }
         }
     </style>
 </head>
 <body>
 
 <nav id="mainNav">
-    <h1>Art Rotation Co.</h1>
+    <div class="nav-logo">
+        <h1>Art<br>Rotation<br>Co.</h1>
+    </div>
     <div class="nav-links">
         <a href="#series-paintings">Paintings</a>
         <a href="#series-sculptures">Sculptures</a>
-        <a href="#about">The Artist</a>
+        <a href="#about">Artist</a>
     </div>
 </nav>
 
@@ -86,7 +96,7 @@
     <div class="hero-content">
         <p class="hero-sub">Port Perry &bull; Ontario</p>
         <h2>The Digital Portfolio</h2>
-        <p style="font-size: 0.8rem; letter-spacing: 3px; color: #888; max-width: 350px; margin: 35px auto; line-height: 2;">A curated experience of original works by Mike Andrew Stamper.</p>
+        <p style="font-size: 0.75rem; letter-spacing: 2px; color: #888; max-width: 280px; margin: 25px auto; line-height: 1.8;">Original works by Mike Andrew Stamper.</p>
         <button class="btn btn-unlock" onclick="unlockExperience()">Enter Gallery</button>
     </div>
 </section>
@@ -102,10 +112,10 @@
         </div>
         <div class="price-anchor">
             <div class="price-row"><span class="label">Acquisition Value</span><span>$1,200.00</span></div>
-            <div class="price-row"><span class="label">Monthly Rotation</span><span>$48.00</span></div>
-            <div class="price-row equity"><span class="label">ARC Equity Earned</span><span style="color:var(--gold)">$36.00 / mo</span></div>
+            <div class="price-row"><span class="label">Rotation Fee</span><span>$48.00</span></div>
+            <div class="price-row equity"><span class="label">ARC Equity Earned</span><span style="color:var(--gold)">+$36.00 / mo</span></div>
         </div>
-        <div class="artist-notes">"Inspired by the kinetic energy of the spring melt in the Kawarthas. Every stroke captures the shifting Ontario light."</div>
+        <div class="artist-notes">"Inspired by the kinetic energy of the spring melt in Kawarthas. Every stroke captures shifting Ontario light."</div>
         <div style="display:flex; gap:10px;">
             <a href="membership.html" class="btn btn-black" style="flex:1">Start Rotation</a>
             <a href="mailto:mike_stamper@hotmail.com?subject=Inquiry: Acrylic Falls" class="btn" style="flex:1">Inquiry</a>
@@ -124,10 +134,10 @@
         </div>
         <div class="price-anchor">
             <div class="price-row"><span class="label">Acquisition Value</span><span>$950.00</span></div>
-            <div class="price-row"><span class="label">Monthly Rotation</span><span>$38.00</span></div>
-            <div class="price-row equity"><span class="label">ARC Equity Earned</span><span style="color:var(--gold)">$28.50 / mo</span></div>
+            <div class="price-row"><span class="label">Rotation Fee</span><span>$38.00</span></div>
+            <div class="price-row equity"><span class="label">ARC Equity Earned</span><span style="color:var(--gold)">+$28.50 / mo</span></div>
         </div>
-        <div class="artist-notes">"A process of subtraction—finding the soul of the animal hidden within the grain of the soapstone."</div>
+        <div class="artist-notes">"A process of subtraction—finding the soul of the animal hidden within the grain of the brazilian soapstone."</div>
         <div style="display:flex; gap:10px;">
             <a href="membership.html" class="btn btn-black" style="flex:1">Start Rotation</a>
             <a href="mailto:mike_stamper@hotmail.com?subject=Inquiry: Bear Study" class="btn" style="flex:1">Inquiry</a>
@@ -137,25 +147,23 @@
 
 <section class="page about-page" id="about">
     <div class="about-grid">
-        <div style="background:#eee; height: 100%; min-height: 400px; display:flex; align-items:center; justify-content:center; color:#bbb; font-family:'Playfair Display'; font-size: 4rem; font-style: italic;">M.S.</div>
+        <div style="background:#f0f0f0; height: 300px; display:flex; align-items:center; justify-content:center; color:#ccc; font-family:'Playfair Display'; font-size: 3rem; font-style: italic;">M.S.</div>
         <div class="about-text">
             <p class="story-meta">The Maker</p>
             <h3>Mike Andrew Stamper</h3>
-            <p style="color: #666; font-size: 0.95rem; line-height: 2.2;">
-                Based in Port Perry, Ontario, Mike explores the intersection of raw nature and abstract form. From hand-sculpted white pine to vibrant canvas works, every piece is a singular original. 
-                <br><br>
-                The Art Rotation Co. (ARC) ensures a direct connection between collector and craftsman through a bespoke, white-glove experience.
+            <p style="color: #666; font-size: 0.85rem; line-height: 2;">
+                Based in Port Perry, Ontario, Mike explores raw nature and abstract form. From hand-sculpted stone to canvas, every piece is a singular original managed through a bespoke, white-glove experience.
             </p>
-            <a href="comparison.html" style="font-size: 0.7rem; letter-spacing: 2px; color: var(--gold); text-decoration: none; font-weight: bold; border-bottom: 1px solid var(--gold); padding-bottom: 5px;">VIEW THE ARC ADVANTAGE &rarr;</a>
+            <a href="comparison.html" style="font-size: 0.6rem; letter-spacing: 2px; color: var(--gold); text-decoration: none; font-weight: bold; border-bottom: 1px solid var(--gold); padding-bottom: 4px;">THE ARC ADVANTAGE &rarr;</a>
             
             <div class="future-box">
-                <div>
-                    <b>Style Wishlists</b><br>
-                    Request custom themes or tones for future studio sessions.
+                <div class="future-item">
+                    <h4>Style Wishlists</h4>
+                    <p>Request custom themes. <a href="mailto:mike_stamper@hotmail.com?subject=Style Wishlist Request">Send a Brief &rarr;</a></p>
                 </div>
-                <div>
-                    <b>Guest Artists</b><br>
-                    Curated secondary creators joining the ARC rotation soon.
+                <div class="future-item">
+                    <h4>Guest Artists</h4>
+                    <p>New creators joining the ARC rotation soon.</p>
                 </div>
             </div>
         </div>
@@ -163,26 +171,23 @@
 </section>
 
 <script>
-    // HEADER LOGIC
     window.onscroll = function() {
         var nav = document.getElementById('mainNav');
-        if (window.pageYOffset > 100) { nav.classList.add("scrolled"); } 
+        if (window.pageYOffset > 50) { nav.classList.add("scrolled"); } 
         else { nav.classList.remove("scrolled"); }
     };
 
-    // HAPTIC UNLOCK
     function unlockExperience() {
         if (window.navigator && window.navigator.vibrate) {
-            window.navigator.vibrate([15, 40, 15]); 
+            window.navigator.vibrate([15, 30, 15]); 
         }
         document.getElementById('series-paintings').scrollIntoView();
     }
 
-    // SCROLL SNAP VIBRATION
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && window.navigator.vibrate) {
-                window.navigator.vibrate(12); 
+                window.navigator.vibrate(10); 
             }
         });
     }, { threshold: 0.5 });
