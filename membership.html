@@ -6,52 +6,122 @@
     <title>Membership | Art Rotation Co.</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #1a1a1a; line-height: 1.8; }
-        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-        h1, h2 { font-family: 'Playfair Display', serif; text-transform: uppercase; letter-spacing: 3px; }
-        .step { margin-bottom: 40px; padding-left: 20px; border-left: 1px solid #eee; }
-        .equity-card { background: #f9f9f9; padding: 30px; border-radius: 4px; margin: 40px 0; }
-        .btn-black { background: #000; color: #fff; text-decoration: none; padding: 15px 30px; display: inline-block; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
-        input[type="email"] { width: 100%; padding: 15px; margin: 20px 0; border: 1px solid #ddd; box-sizing: border-box; }
+        :root { --bg: #FFFFFF; --text: #1a1a1a; --gold: #c5a059; --accent: #fafafa; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+        
+        /* TACTILE PAPER GRAIN OVERLAY */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 120px 20px; }
+        
+        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; text-align: center; margin-bottom: 10px; }
+        .subtitle { text-align: center; text-transform: uppercase; letter-spacing: 4px; font-size: 0.7rem; color: var(--gold); margin-bottom: 60px; }
+
+        /* THE LOGISTICS CARD */
+        .fee-card { border: 1px solid #eee; padding: 50px; background: var(--accent); margin-bottom: 60px; position: relative; }
+        .fee-card h3 { font-family: 'Playfair Display', serif; margin-top: 0; font-size: 1.5rem; }
+        
+        .fee-section { margin-top: 30px; border-top: 1px solid #ddd; padding-top: 20px; }
+        .fee-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+        .fee-label { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .fee-price { font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+        
+        .zone-details { font-size: 0.85rem; color: #666; margin-bottom: 20px; line-height: 1.6; }
+        .exclusive-note { font-style: italic; font-size: 0.8rem; color: #888; border-left: 2px solid var(--gold); padding-left: 15px; margin-top: 20px; }
+
+        /* THE PROCESS */
+        .process-list { list-style: none; padding: 0; margin-top: 40px; }
+        .process-item { margin-bottom: 30px; padding-left: 40px; position: relative; }
+        .process-item::before { 
+            content: attr(data-step); 
+            position: absolute; left: 0; top: 0; 
+            font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--gold); 
+        }
+
+        .btn-black { 
+            display: block; width: 100%; padding: 25px; 
+            background: #000; color: #fff; text-align: center; 
+            text-decoration: none; text-transform: uppercase; 
+            letter-spacing: 4px; font-size: 0.8rem; margin-top: 50px; 
+            transition: 0.3s;
+        }
+        .btn-black:hover { opacity: 0.8; }
+
+        .back-link { display: block; text-align: center; margin-bottom: 40px; text-decoration: none; color: #888; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .fee-card { padding: 30px; }
+            .fee-row { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <a href="index.html" style="text-decoration: none; color: #888; font-size: 0.8rem;">← Back to Gallery</a>
-    
-    <h1 style="margin-top: 40px;">ARC Membership & Logistics</h1>
-    <p>Becoming a member of the Art Rotation Co. is the first step toward building a flexible, high-end art collection.</p>
-
-    <div class="step">
-        <h2>01. Join the Collective</h2>
-        <p>Register for free to receive updates on new works, exclusive "first look" gallery previews, and access to the rotation program.</p>
-    </div>
-
-    <div class="step">
-        <h2>02. Select & Rotate</h2>
-        <p>Once you choose a piece, we arrange the White-Glove delivery. Your 4% monthly fee begins only once the piece is installed in your space.</p>
-    </div>
-
-    <div class="step">
-        <h2>03. Equity & Statements</h2>
-        <p>As a member, 75% of your fees are tracked as **Art Equity**. Every quarter, you receive a personal statement showing your balance, which can be applied to the outright purchase of any piece in the collection.</p>
-    </div>
-
-    <div class="equity-card">
-        <h3>Request Your Membership</h3>
-        <p>Enter your email below to start the onboarding process. Mike will reach out personally to discuss your collection goals and current availability.</p>
+    <div class="container">
+        <a href="index.html" class="back-link">← Return to Portfolio</a>
         
-        <form>
-            <input type="email" placeholder="Enter your email address" required>
-            <button type="submit" class="btn-black">Apply for Membership</button>
-        </form>
-    </div>
+        <h1>Membership</h1>
+        <p class="subtitle">Logistics & Installation</p>
 
-    <footer style="margin-top: 60px; font-size: 0.7rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">
-        Art Rotation Co. | Logistics Managed by Mike Andrew Stamper
-    </footer>
-</div>
+        <div class="fee-card">
+            <h3>White-Glove Delivery</h3>
+            <p style="color: #555; font-size: 0.95rem;">Every rotation includes personal delivery, curation advice, and professional installation by the artist.</p>
+            
+            <div class="fee-section">
+                <div class="fee-row">
+                    <span class="fee-label">Regional Flat Rate</span>
+                    <span class="fee-price">$125.00</span>
+                </div>
+                <div class="zone-details">
+                    Includes Port Perry, Durham Region, the GTA, and North to Muskoka.
+                </div>
+
+                <div class="fee-row">
+                    <span class="fee-label">Extended Travel</span>
+                    <span class="fee-price">Inquire</span>
+                </div>
+                <div class="zone-details">
+                    For locations beyond a 4-hour radius from Port Perry, please contact Mike personally to coordinate logistics.
+                </div>
+            </div>
+
+            <div class="exclusive-note">
+                75% of your monthly rotation fees are credited toward the eventual acquisition of any piece in the collection.
+            </div>
+        </div>
+
+        <h3 style="font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 40px;">How It Works</h3>
+        
+        <div class="process-list">
+            <div class="process-item" data-step="01">
+                <strong>Selection</strong><br>
+                Choose a piece from the digital portfolio that speaks to your space.
+            </div>
+            <div class="process-item" data-step="02">
+                <strong>Onboarding</strong><br>
+                We coordinate a delivery time. The flat-rate logistics fee is processed upon successful installation.
+            </div>
+            <div class="process-item" data-step="03">
+                <strong>Rotation & Equity</strong><br>
+                Live with the work for a minimum of 3 months. If you choose to rotate, we simply bring the next piece and repeat the process.
+            </div>
+        </div>
+
+        <a href="mailto:mike_stamper@hotmail.com?subject=ARC%20Membership%20Application" class="btn-black">Apply for Membership</a>
+        
+        <p style="text-align: center; font-size: 0.7rem; color: #aaa; margin-top: 40px; text-transform: uppercase; letter-spacing: 2px;">
+            Art Rotation Co. | Port Perry, Ontario
+        </p>
+    </div>
 
 </body>
 </html>
