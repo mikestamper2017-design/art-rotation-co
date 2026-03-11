@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Rotation Co. | Mike Andrew Stamper</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #FFFFFF; --text: #1a1a1a; --accent: #f4f4f4; --gold: #c5a059; }
+        :root { --bg: #FFFFFF; --text: #1a1a1a; --accent: #f8f8f8; --gold: #c5a059; --charcoal: #222; }
 
         /* MAGAZINE SNAP LOGIC */
         html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
         
-        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; font-weight: 300; }
 
         /* TACTILE PAPER GRAIN OVERLAY */
         body::before {
@@ -24,23 +24,24 @@
             z-index: 9999;
         }
 
-        /* NAVIGATION */
+        /* SLEEK NAVIGATION */
         nav {
             position: fixed;
             top: 0; width: 100%;
-            padding: 20px;
-            background: rgba(255,255,255,0.9);
-            backdrop-filter: blur(5px);
+            padding: 25px 40px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
             box-sizing: border-box;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        nav h1 { font-family: 'Playfair Display', serif; font-size: 1rem; letter-spacing: 4px; margin: 0; text-transform: uppercase; }
-        .nav-links a { text-decoration: none; color: #888; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-left: 20px; }
+        nav h1 { font-family: 'Playfair Display', serif; font-size: 0.9rem; letter-spacing: 5px; margin: 0; text-transform: uppercase; font-weight: 400; }
+        .nav-links a { text-decoration: none; color: #999; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; margin-left: 25px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
 
         /* EDITORIAL PAGES */
         section.page {
@@ -53,84 +54,104 @@
         /* ART VISUAL (LEFT) */
         .art-visual {
             flex: 1.2;
-            background: #fafafa;
+            background: var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 60px;
+            padding: 80px;
         }
 
         .art-visual img {
             max-width: 85%;
             max-height: 75vh;
-            box-shadow: 20px 40px 60px rgba(0,0,0,0.12);
-            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 30px 50px 80px rgba(0,0,0,0.08);
+            transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         /* ART STORY (RIGHT) */
         .art-story {
             flex: 0.8;
-            padding: 100px 60px;
+            padding: 100px 80px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             background: #fff;
-            border-left: 1px solid #eee;
+            border-left: 1px solid #f0f0f0;
         }
 
-        .story-header h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 0; line-height: 1.1; }
-        .story-meta { text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; color: #888; margin: 15px 0 30px; }
+        .story-header h2 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin: 0; line-height: 1; font-weight: 400; }
+        .story-meta { text-transform: uppercase; letter-spacing: 5px; font-size: 0.65rem; color: var(--gold); margin: 20px 0 40px; font-weight: 400; }
+
+        /* ANCHOR PRICE BOX */
+        .price-anchor {
+            border: 1px solid #e0e0e0;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .price-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+        .label { text-transform: uppercase; font-size: 0.6rem; letter-spacing: 2px; color: #999; }
+        .value { font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+        .equity-value { color: var(--gold); font-weight: 400; }
 
         .artist-notes {
-            margin: 30px 0;
+            margin: 0 0 40px;
             font-size: 1rem;
-            color: #444;
-            border-left: 2px solid var(--gold);
-            padding-left: 20px;
+            color: #555;
+            line-height: 1.9;
+            font-family: 'Playfair Display', serif;
             font-style: italic;
-            line-height: 1.8;
         }
 
-        .technical-details { font-size: 0.8rem; color: #888; margin-bottom: 40px; line-height: 2; }
-        .technical-details b { color: #000; text-transform: uppercase; font-size: 0.65rem; }
-
-        /* BUTTONS */
-        .action-group { display: flex; gap: 10px; }
+        /* SLEEK BUTTONS */
+        .action-group { display: flex; gap: 15px; }
         .btn {
             flex: 1;
-            padding: 18px;
+            padding: 20px;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.7rem;
-            border: 1px solid #000;
+            letter-spacing: 3px;
+            font-size: 0.65rem;
+            transition: all 0.4s;
             text-align: center;
-            transition: 0.3s;
         }
-        .btn-black { background: #000; color: #fff; }
-        .btn-outline { color: #000; }
-        .btn:hover { opacity: 0.7; }
+        .btn-black { background: var(--charcoal); color: #fff; border: 1px solid var(--charcoal); }
+        .btn-outline { border: 1px solid #ddd; color: var(--charcoal); }
+        .btn:hover { letter-spacing: 4px; background: #fafafa; color: #000; border-color: #000; }
 
-        /* ABOUT SECTION */
-        .about-page {
-            background: #1a1a1a !important;
+        /* HIGH-END HERO SECTION */
+        .hero-page {
+            background: #111 !important;
             color: #fff !important;
             flex-direction: column !important;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px;
         }
 
-        .about-content { max-width: 600px; }
-        .about-content h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; }
+        .hero-content h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 4.5rem; 
+            font-weight: 400; 
+            margin: 0; 
+            letter-spacing: -1px;
+            font-style: italic;
+        }
         
+        .hero-sub {
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-size: 0.7rem;
+            margin-top: 20px;
+            color: var(--gold);
+        }
+
         /* MOBILE VIEW */
         @media (max-width: 900px) {
             section.page { flex-direction: column; height: auto; scroll-snap-align: none; }
-            .art-visual { height: 70vh; padding: 40px 20px; }
-            .art-story { padding: 60px 30px; border-left: none; border-top: 1px solid #eee; }
-            .story-header h2 { font-size: 2rem; }
+            .art-visual { height: 65vh; padding: 40px; }
+            .art-story { padding: 60px 40px; border-left: none; }
+            .hero-content h2 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -139,105 +160,108 @@
 <nav>
     <h1>Art Rotation Co.</h1>
     <div class="nav-links">
-        <a href="comparison.html">Advantage</a>
+        <a href="#series-acrylic">Paintings</a>
+        <a href="#series-sculpture">Sculptures</a>
         <a href="membership.html">Membership</a>
     </div>
 </nav>
 
-<section class="page about-page">
-    <div class="about-content">
-        <p class="story-meta" style="color: var(--gold);">Est. 2026 | Port Perry</p>
+<section class="page hero-page">
+    <div class="hero-content">
+        <p class="hero-sub">The 2026 Collection</p>
         <h2>The Digital Portfolio</h2>
-        <p style="font-size: 1.1rem; color: #ccc; margin-bottom: 40px;">
-            A curated rotation of original Canadian works. Build equity as you live with the art. 
-            Scroll to begin the experience.
+        <p style="font-size: 0.9rem; color: #888; letter-spacing: 2px; margin-top: 40px; max-width: 400px; line-height: 2;">
+            A curated experience of original Canadian works by Mike Andrew Stamper. 
         </p>
-        <div style="color: #666; font-size: 0.7rem; letter-spacing: 5px;">&darr; SCROLL</div>
+        <div style="margin-top: 60px; color: var(--gold); font-size: 0.6rem; letter-spacing: 5px;">EXPLORE &darr;</div>
     </div>
 </section>
 
-<section class="page art-piece">
+<section class="page" id="series-acrylic">
     <div class="art-visual">
         <img src="images/stamper-acrylicfalls1.jpg" alt="Acrylic Falls">
     </div>
     <div class="art-story">
         <div class="story-header">
+            <p class="story-meta">Large Scale | Masterwork</p>
             <h2>Acrylic Falls</h2>
-            <p class="story-meta">Original Acrylic on Canvas</p>
         </div>
-        <div class="technical-details">
-            <b>Medium:</b> Heavy-Texture Acrylic<br>
-            <b>Series:</b> The Flow Series<br>
-            <b>Equity Earned:</b> $36.00 / Month
+
+        <div class="price-anchor">
+            <div class="price-row">
+                <span class="label">Full Acquisition Value</span>
+                <span class="value">$1,200.00</span>
+            </div>
+            <div style="height: 1px; background: #f0f0f0; margin: 15px 0;"></div>
+            <div class="price-row">
+                <span class="label">Monthly Rotation</span>
+                <span class="value">$48.00</span>
+            </div>
+            <div class="price-row">
+                <span class="label">ARC Equity Earned (75%)</span>
+                <span class="value equity-value">+$36.00 / mo</span>
+            </div>
         </div>
+
         <div class="artist-notes">
-            "I wanted to capture the kinetic energy of the early spring melt in the Kawarthas. The texture is designed to catch the shifting light from morning to dusk."
+            "Capturing the kinetic energy of the spring melt in Durham. The texture is designed to catch shifting light."
         </div>
+
         <div class="action-group">
             <a href="membership.html" class="btn btn-black">Start Rotation</a>
-            <a href="mailto:mike_stamper@hotmail.com?subject=Inquiry: Acrylic Falls" class="btn btn-outline">Private Purchase</a>
+            <a href="mailto:YOUR_EMAIL@HERE.com?subject=Inquiry: Acrylic Falls" class="btn btn-outline">Private Acquisition</a>
         </div>
     </div>
 </section>
 
-<section class="page art-piece">
+<section class="page" id="series-sculpture">
     <div class="art-visual">
         <img src="images/stamper-sculpturebear2a.jpg" alt="Bear Study No. 2">
     </div>
     <div class="art-story">
         <div class="story-header">
+            <p class="story-meta">Hand-Sculpted | Abstract</p>
             <h2>Bear Study No. 2</h2>
-            <p class="story-meta">Hand-Sculpted Abstract Fauna</p>
         </div>
-        <div class="technical-details">
-            <b>Material:</b> Hand-Chiselled White Pine<br>
-            <b>Finish:</b> Natural Beeswax & Oil<br>
-            <b>Equity Earned:</b> $28.50 / Month
+
+        <div class="price-anchor">
+            <div class="price-row">
+                <span class="label">Full Acquisition Value</span>
+                <span class="value">$950.00</span>
+            </div>
+            <div style="height: 1px; background: #f0f0f0; margin: 15px 0;"></div>
+            <div class="price-row">
+                <span class="label">Monthly Rotation</span>
+                <span class="value">$38.00</span>
+            </div>
+            <div class="price-row">
+                <span class="label">ARC Equity Earned (75%)</span>
+                <span class="value equity-value">+$28.50 / mo</span>
+            </div>
         </div>
+
         <div class="artist-notes">
-            "Stone carries a memory. This sculpture was a process of subtraction—finding the soul of the animal hidden within the grain of the acient soapstone."
+            "A process of subtraction—finding the soul of the animal hidden within the grain of the white pine."
         </div>
+
         <div class="action-group">
             <a href="membership.html" class="btn btn-black">Start Rotation</a>
-            <a href="mailto:mike_stamper@hotmail.com?subject=Inquiry: Bear Study" class="btn btn-outline">Private Purchase</a>
-        </div>
-    </div>
-</section>
-
-<section class="page" style="background: #fafafa;">
-    <div class="art-visual" style="flex: 0.8; background: #eee;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 5rem; opacity: 0.1;">M.S.</div>
-    </div>
-    <div class="art-story" style="flex: 1.2;">
-        <h2>The Artist</h2>
-        <p class="story-meta">Mike Andrew Stamper</p>
-        <p style="color: #444;">Based in Port Perry, Ontario, Mike creates works that explore the intersection of raw nature and abstract form. Every piece is a singular original, managed personally from studio to installation.</p>
-        <p style="color: #888; font-size: 0.9rem;">
-            The Art Rotation Co. (ARC) represents a new era for collectors—one where fine art is lived with, rotated, and acquired through a bespoke, white-glove experience.
-        </p>
-        <div style="margin-top: 30px;">
-            <a href="comparison.html" style="color: #000; text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; font-weight: bold;">View the ARC Advantage &rarr;</a>
+            <a href="mailto:YOUR_EMAIL@HERE.com?subject=Inquiry: Bear Study" class="btn btn-outline">Private Acquisition</a>
         </div>
     </div>
 </section>
 
 <script>
-    // TACTILE VIBRATION LOGIC
-    // Triggers a tiny "click" vibration when a new section enters view
+    // VIBRATION FEEDBACK
     const sections = document.querySelectorAll('section.page');
-    const observerOptions = { threshold: 0.5 };
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (window.navigator && window.navigator.vibrate) {
-                    window.navigator.vibrate(15); // A subtle 15ms "click"
-                }
+            if (entry.isIntersecting && window.navigator.vibrate) {
+                window.navigator.vibrate(12); 
             }
         });
-    }, observerOptions);
-
-    sections.forEach(section => observer.observe(section));
+    }, { threshold: 0.5 });
+    sections.forEach(s => observer.observe(s));
 </script>
 
 </body>
